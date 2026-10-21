@@ -69,8 +69,11 @@ section{
         max-width: 600px;
         margin: 0 1em;
     }
-    img:not(.big-img){
+    img{
         width: 100%;
+        max-width: 500px;
+    }
+    img:not(.big-img){
         max-width: 400px;
     }
 }
@@ -172,6 +175,12 @@ a.button.realisation::before{
     flex-direction: row;
     margin-top: 0.5em;
     min-height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  section div.w-50{
+    width: 90%;
   }
 }
 
