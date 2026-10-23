@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'Rushing Nightshade';
+    src: url('font/rushing-nightshade.woff2') format('woff2'),
+         url('font/rushing-nightshade.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root{
     --font-color: #4B4B4D;
     --accent-color: #D17967;
+    --accent-color2: #E7AF49;
 }
 
 html{
@@ -44,6 +53,10 @@ nav{
     a{
         color: var(--font-color);
         text-decoration: none;
+        border-bottom: 2px solid white;
+    }
+    a:hover, a.active{
+        border-bottom: 2px solid var(--accent-color2);
     }
 }
 
@@ -113,12 +126,13 @@ form{
 	}
 }
 
-p.tagline{
-    font-family: "Pattaya", sans-serif;
+p.tagline, h2{
+    font-family: "Rushing Nightshade", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2em;
     color: var(--accent-color);
+    line-height: 0.9em;
 }
 
 a.button, input[type="submit"]{
@@ -126,8 +140,9 @@ a.button, input[type="submit"]{
     background-color: var(--accent-color);
     border-radius: 30px 15px;
     text-decoration: none;
-    padding: 0.1em 1em;
-    width: 120px;
+    min-width: 120px;
+    width: max-content;
+    padding: 0 0.7em;
     height: 30px;
     font-size: 1.5em;
     overflow: hidden;
@@ -136,28 +151,12 @@ a.button, input[type="submit"]{
     font-family: 'Rushing Nightshade';
     border: none;
     position: relative;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
-a.button{
-  &::before{
-    color: #fff;
-    font-family: 'Rushing Nightshade';
-    transition: all 0.3s ease-in-out;
-    height: 20px;
-    position: absolute;
-    top: -40px;
-  }
-  &:hover{
-    color: var(--accent-color);
-    &::before{
-      transform: translateY(43px);
-    }
-  }
-}
-
-a.button.realisation::before{
-  content: 'réalisations→';
+a.button:hover, input[type="submit"]:hover{
+    border-radius: 25px;
+    background-color: var(--accent-color2);
 }
 
 @media (max-width: 1500px) {
